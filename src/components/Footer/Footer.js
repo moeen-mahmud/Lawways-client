@@ -58,7 +58,7 @@ const Footer = () => {
       </div>
       <div className="pt-10 text-center border-t-2 border-gray-700">
         <h6>Copyright &copy; 2021, Lawways.</h6>
-        <ul className="flex flex-col justify-center mt-4 text-gray-500 md:flex-row md:gap-4">
+        <ul className="flex flex-col justify-center mt-4 text-g ray-500 md:flex-row md:gap-4">
           <li>Terms of Services</li>
           <li>Privacy Policy</li>
           <li>Code of Ethics</li>
