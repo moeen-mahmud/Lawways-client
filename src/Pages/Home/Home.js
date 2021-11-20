@@ -1,5 +1,6 @@
 import React from "react";
 import CallToAction from "../../components/CallToAction/CallToAction";
+import Footer from "../../components/Footer/Footer";
 import Hero from "../../components/Hero/Hero";
 import LawyerContainer from "../../components/Lawyers/LawyerContainer";
 import Navbar from "../../components/Navbar/Navbar";
@@ -17,6 +18,7 @@ const Home = () => {
         <Trusted />
       </div>
       <CallToAction />
+      <Footer />
     </div>
   );
 };
