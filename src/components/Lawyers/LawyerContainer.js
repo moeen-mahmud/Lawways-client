@@ -57,7 +57,7 @@ const LawyerContainer = () => {
         <h2 className="mb-10 font-serif text-4xl font-bold text-gray-800">
           Our Lawyers Are Here To Help
         </h2>
-        <p>
+        <p className="leading-relaxed text-justify text-gray-700">
           For the last 49 years we’ve worked to build long-standing partnerships
           with high-quality law firms across the U.S. and Canada. Whether you
           have a personal legal issue, you need help starting your business, or

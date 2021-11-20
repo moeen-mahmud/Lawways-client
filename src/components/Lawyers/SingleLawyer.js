@@ -16,7 +16,7 @@ const SingleLawyer = ({ lawyer }) => {
         <h3 className="mb-8 font-serif text-3xl font-bold text-gray-800">
           {lawyerName}
         </h3>
-        <p>{lawyerDetails}</p>
+        <p className="text-justify text-gray-500">{lawyerDetails}</p>
       </section>
     </div>
   );
