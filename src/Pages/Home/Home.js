@@ -1,4 +1,5 @@
 import React from "react";
+import CallToAction from "../../components/CallToAction/CallToAction";
 import Hero from "../../components/Hero/Hero";
 import LawyerContainer from "../../components/Lawyers/LawyerContainer";
 import Navbar from "../../components/Navbar/Navbar";
@@ -15,6 +16,7 @@ const Home = () => {
         <ReviewContainer />
         <Trusted />
       </div>
+      <CallToAction />
     </div>
   );
 };
