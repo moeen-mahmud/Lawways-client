@@ -6,11 +6,11 @@ import HeroBG from "../../assets/hero-bg.jpg";
 
 const Hero = () => {
   return (
-    <section className="flex flex-col items-center justify-between gap-4 text-gray-100 bg-gray-800 md:mt-2 md:flex-row">
+    <section className="flex flex-col items-center justify-between gap-4 mb-12 text-gray-100 bg-gray-800 md:flex-row">
       <div className="md:w-1/2">
         <img src={HeroBG} alt="Hero Background" />
       </div>
-      <div className="px-4 md:w-1/2 ">
+      <div className="px-4 py-4 md:w-1/2 ">
         <h1 className="mb-6 font-serif text-4xl font-semibold leading-relaxed text-center md:leading-normal md:text-left">
           A Law Firm At Your Palm
         </h1>
@@ -23,6 +23,9 @@ const Hero = () => {
           are you waiting for? Join now and speak with a lawyer in as little as
           4 hours after initial contact.
         </p>
+        <button className="px-6 py-2 mt-4 transition-all duration-500 bg-red-700 rounded hover:bg-red-900">
+          Explore Plans
+        </button>
       </div>
     </section>
   );

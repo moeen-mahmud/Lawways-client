@@ -22,7 +22,7 @@ const Navbar = () => {
   // TODO: have to make it fixed by default
   return (
     <div>
-      <header>
+      <header className="md:mb-2">
         <div className="flex items-center justify-between px-8 py-4">
           <div>
             <img className="w-2/4" src={brandLogo} alt="Lawways" />
