@@ -23,7 +23,7 @@ const Hero = () => {
           are you waiting for? Join now and speak with a lawyer in as little as
           4 hours after initial contact.
         </p>
-        <button className="px-6 py-2 mt-4 transition-all duration-500 bg-red-700 rounded hover:bg-red-900">
+        <button className="px-6 py-2 mt-4 transition-all duration-500 bg-red-700 rounded hover:bg-red-800 active:bg-red-900">
           Explore Plans
         </button>
       </div>
