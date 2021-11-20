@@ -1,5 +1,6 @@
 import React from "react";
 import Hero from "../../components/Hero/Hero";
+import LawyerContainer from "../../components/Lawyers/LawyerContainer";
 import Navbar from "../../components/Navbar/Navbar";
 
 const Home = () => {
@@ -7,7 +8,9 @@ const Home = () => {
     <div>
       <Navbar />
       <Hero />
-      {/* <div className="mt-8 px-8"></div> */}
+      <div className="px-8 mt-8">
+        <LawyerContainer />
+      </div>
     </div>
   );
 };
