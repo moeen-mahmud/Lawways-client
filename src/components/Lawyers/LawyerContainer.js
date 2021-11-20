@@ -52,7 +52,7 @@ const LawyerContainer = () => {
   };
 
   return (
-    <section className="flex flex-col justify-between my-20 md:flex-row">
+    <section className="flex flex-col justify-between my-32 md:flex-row">
       <div className="md:w-2/5">
         <h2 className="mb-10 font-serif text-4xl font-bold text-gray-800">
           Our Lawyers Are Here To Help

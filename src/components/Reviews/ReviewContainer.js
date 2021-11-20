@@ -55,7 +55,7 @@ const ReviewContainer = () => {
   };
 
   return (
-    <section className="flex flex-col justify-between gap-6 my-20 md:flex-row">
+    <section className="flex flex-col justify-between gap-6 my-32 md:flex-row">
       <div className="md:w-2/5">
         <Slider {...settings}>
           {reviews.map((review) => (
