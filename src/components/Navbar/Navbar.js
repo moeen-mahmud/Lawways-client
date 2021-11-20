@@ -21,13 +21,13 @@ const Navbar = () => {
   };
   // TODO: have to make it fixed by default
   return (
-    <>
-      <header className="relative">
-        <div className="flex justify-between items-center py-4 px-8">
+    <div>
+      <header>
+        <div className="flex items-center justify-between px-8 py-4">
           <div>
             <img className="w-2/4" src={brandLogo} alt="Lawways" />
           </div>
-          <div className="block md:hidden z-10">
+          <div className="z-10 block md:hidden">
             <button onClick={handleMobileMenu}>
               {openMenu ? (
                 <FaTimes style={{ color: "#fefeff" }} className="menu-icon" />
@@ -39,7 +39,7 @@ const Navbar = () => {
           <div className="hidden md:block">
             <nav className="flex gap-6">
               <NavLink
-                className="font-semibold text-lg"
+                className="text-lg font-semibold"
                 style={({ isActive }) => ({
                   color: isActive ? "gray" : "#232832",
                 })}
@@ -48,7 +48,7 @@ const Navbar = () => {
                 Home
               </NavLink>
               <NavLink
-                className="font-semibold text-lg"
+                className="text-lg font-semibold"
                 style={({ isActive }) => ({
                   color: isActive ? "gray" : "#232832",
                 })}
@@ -57,7 +57,7 @@ const Navbar = () => {
                 Explore
               </NavLink>
               <NavLink
-                className="font-semibold text-lg"
+                className="text-lg font-semibold"
                 style={({ isActive }) => ({
                   color: isActive ? "gray" : "#232832",
                 })}
@@ -70,7 +70,7 @@ const Navbar = () => {
         </div>
       </header>
       <Menu openMenu={openMenu} />
-    </>
+    </div>
   );
 };
 

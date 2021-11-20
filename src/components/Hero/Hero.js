@@ -6,7 +6,7 @@ import HeroBG from "../../assets/hero-bg.jpg";
 
 const Hero = () => {
   return (
-    <section className="flex flex-col items-center justify-between gap-4 mt-4 text-gray-100 bg-gray-800 md:flex-row">
+    <section className="flex flex-col items-center justify-between gap-4 text-gray-100 bg-gray-800 md:mt-2 md:flex-row">
       <div className="md:w-1/2">
         <img src={HeroBG} alt="Hero Background" />
       </div>
