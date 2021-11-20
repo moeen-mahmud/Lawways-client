@@ -64,14 +64,15 @@ const ReviewContainer = () => {
         </Slider>
       </div>
       <div className="md:w-1/2">
-        <h2 className="mt-10 mb-10 font-serif text-3xl font-bold text-center text-gray-800 md:text-4xl md:text-left">
+        <h2 className="mt-10 mb-10 font-serif text-3xl font-bold text-center text-gray-800 md:mt-16 md:text-4xl md:text-left">
           Everyone Deserves Legal Protection
         </h2>
         <p className="font-medium leading-relaxed text-justify text-gray-500">
-          With LegalShield, finding solutions to your legal issues doesn’t have
-          to be stressful, complicated, or expensive. Instead of paying a lawyer
-          expensive hourly fees, you pay a small monthly fee and get access to
-          experienced lawyers that can help you with your legal issue.
+          With <span className="font-semibold">Lawways</span>, finding solutions
+          to your legal issues doesn’t have to be stressful, complicated, or
+          expensive. Instead of paying a lawyer expensive hourly fees, you pay a
+          small monthly fee and get access to experienced lawyers that can help
+          you with your legal issue.
         </p>
         <button className="px-6 py-2 mt-8 text-gray-100 transition-all duration-500 bg-gray-800 rounded hover:bg-gray-600 active:bg-black">
           Learn More

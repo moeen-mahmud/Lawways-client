@@ -14,6 +14,7 @@ const SingleReview = ({ review }) => {
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         position: "relative",
+        borderRadius: "5px",
       }}
     >
       <div className="absolute bottom-0 p-3 bg-gray-800 rounded-b">
