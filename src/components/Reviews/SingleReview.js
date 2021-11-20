@@ -1,9 +1,29 @@
 import React from "react";
 
-const SingleReview = () => {
+const SingleReview = ({ review }) => {
+  const { reviewerName, reviewerImage, reviewerDesignation, reviewerDetails } =
+    review;
+
   return (
-    <div>
-      <h1>This is single review</h1>
+    <div
+      style={{
+        backgroundImage: `url("${reviewerImage}")`,
+        minWidth: "300px",
+        minHeight: "500px",
+        backgroundPosition: "top",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        position: "relative",
+      }}
+    >
+      <div className="absolute bottom-0 p-3 bg-gray-800 rounded-b">
+        <h5 className="text-xs leading-relaxed text-gray-200 md:text-base">
+          "{reviewerDetails}"
+        </h5>
+        <p className="mt-4 text-sm italic leading-relaxed text-gray-400 md:text-base">
+          - {reviewerName}, {reviewerDesignation}
+        </p>
+      </div>
     </div>
   );
 };

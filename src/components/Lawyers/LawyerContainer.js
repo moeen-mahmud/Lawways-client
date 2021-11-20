@@ -52,12 +52,12 @@ const LawyerContainer = () => {
   };
 
   return (
-    <section className="flex flex-col gap-8 my-20 md:flex-row">
-      <div className="md:w-1/2">
+    <section className="flex flex-col justify-between my-20 md:flex-row">
+      <div className="md:w-2/5">
         <h2 className="mb-10 font-serif text-4xl font-bold text-gray-800">
           Our Lawyers Are Here To Help
         </h2>
-        <p className="leading-relaxed text-justify text-gray-700">
+        <p className="mb-8 leading-relaxed text-justify text-gray-700 md:mb-0">
           For the last 49 years we’ve worked to build long-standing partnerships
           with high-quality law firms across the U.S. and Canada. Whether you
           have a personal legal issue, you need help starting your business, or
@@ -66,7 +66,7 @@ const LawyerContainer = () => {
           them most.
         </p>
       </div>
-      <div className="w-4/5 md:w-1/2">
+      <div className="md:w-1/2">
         <Slider {...settings}>
           {lawyers.map((lawyer) => (
             <div key={lawyer._id}>
