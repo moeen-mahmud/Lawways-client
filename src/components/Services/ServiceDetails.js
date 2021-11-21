@@ -22,7 +22,7 @@ const ServiceDetails = () => {
 
   return (
     <div>
-      <div className="flex justify-start px-4 m-6 md:px-12">
+      <div className="flex justify-start px-4 mt-6 md:m-6 md:px-12">
         <button
           onClick={() => navigate("/home")}
           className="px-6 py-2 text-gray-200 transition-all duration-200 bg-gray-800 rounded hover:bg-gray-700 active:bg-gray-500"
