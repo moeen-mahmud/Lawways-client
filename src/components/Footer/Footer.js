@@ -10,13 +10,27 @@ const Footer = () => {
               ABOUT US
             </h6>
             <ul className="text-center text-gray-400 md:text-left">
-              <li>Bill of Rights</li>
-              <li>Executive Team</li>
-              <li>Blog</li>
-              <li>Newsroom</li>
-              <li>Associates</li>
-              <li>Our Firms</li>
-              <li>Carrer</li>
+              <li className="transition-all duration-500 cursor-pointer hover:text-gray-200">
+                Bill of Rights
+              </li>
+              <li className="transition-all duration-500 cursor-pointer hover:text-gray-200">
+                Executive Team
+              </li>
+              <li className="transition-all duration-500 cursor-pointer hover:text-gray-200">
+                Blog
+              </li>
+              <li className="transition-all duration-500 cursor-pointer hover:text-gray-200">
+                Newsroom
+              </li>
+              <li className="transition-all duration-500 cursor-pointer hover:text-gray-200">
+                Associates
+              </li>
+              <li className="transition-all duration-500 cursor-pointer hover:text-gray-200">
+                Our Firms
+              </li>
+              <li className="transition-all duration-500 cursor-pointer hover:text-gray-200">
+                Carrer
+              </li>
             </ul>
           </section>
           <section>
@@ -24,13 +38,27 @@ const Footer = () => {
               HELP & SUPPORT
             </h6>
             <ul className="text-center text-gray-400 md:text-left">
-              <li>FAQ's</li>
-              <li>Contact Us</li>
-              <li>HR Professionals</li>
-              <li>Lawways Economic Stress Index</li>
-              <li>Reviews & Testimonials</li>
-              <li>Join Lawyer Network</li>
-              <li>Ask Anything</li>
+              <li className="transition-all duration-500 cursor-pointer hover:text-gray-200">
+                FAQ's
+              </li>
+              <li className="transition-all duration-500 cursor-pointer hover:text-gray-200">
+                Contact Us
+              </li>
+              <li className="transition-all duration-500 cursor-pointer hover:text-gray-200">
+                HR Professionals
+              </li>
+              <li className="transition-all duration-500 cursor-pointer hover:text-gray-200">
+                Lawways Economic Stress Index
+              </li>
+              <li className="transition-all duration-500 cursor-pointer hover:text-gray-200">
+                Reviews & Testimonials
+              </li>
+              <li className="transition-all duration-500 cursor-pointer hover:text-gray-200">
+                Join Lawyer Network
+              </li>
+              <li className="transition-all duration-500 cursor-pointer hover:text-gray-200">
+                Ask Anything
+              </li>
             </ul>
           </section>
         </div>
