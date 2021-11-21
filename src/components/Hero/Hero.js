@@ -14,7 +14,7 @@ const Hero = () => {
         <h1 className="mb-6 font-serif text-4xl font-semibold leading-relaxed text-center md:leading-normal md:text-left">
           A Law Firm At Your Palm
         </h1>
-        <p className="leading-relaxed text-justify">
+        <p className="leading-relaxed text-justify md:pr-8">
           When you need legal help,{" "}
           <span className="font-bold text-gray-200">Lawways</span> is here. Our
           network of experienced lawyers can provide advice on legal issues for
@@ -23,9 +23,6 @@ const Hero = () => {
           are you waiting for? Join now and speak with a lawyer in as little as
           4 hours after initial contact.
         </p>
-        <button className="px-6 py-2 mt-4 transition-all duration-500 bg-red-700 rounded hover:bg-red-800 active:bg-red-900">
-          Explore Plans
-        </button>
       </div>
     </section>
   );
