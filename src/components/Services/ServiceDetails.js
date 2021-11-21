@@ -68,7 +68,7 @@ const ServiceDetails = () => {
           </div>
           <div className="md:w-1/2">
             <img
-              className="block w-full mx-auto"
+              className="block w-full mx-auto rounded"
               src={service.serviceImage}
               alt={service.serviceName}
             />
