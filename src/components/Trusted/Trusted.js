@@ -9,7 +9,7 @@ import fitbitLogo from "../../assets/fitbit.png";
 const Trusted = () => {
   return (
     <section className="my-32">
-      <h2 className="text-2xl font-bold text-center text-gray-800 md:text-4xl">
+      <h2 className="font-serif text-2xl font-bold text-center text-gray-800 md:text-4xl">
         Top company trusts us
       </h2>
       <div className="flex flex-col items-center gap-4 mt-16 md:flex-row">

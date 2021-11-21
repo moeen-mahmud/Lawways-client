@@ -5,6 +5,7 @@ import Hero from "../../components/Hero/Hero";
 import LawyerContainer from "../../components/Lawyers/LawyerContainer";
 import Navbar from "../../components/Navbar/Navbar";
 import ReviewContainer from "../../components/Reviews/ReviewContainer";
+import ServiceContainer from "../../components/Services/ServiceContainer";
 import Trusted from "../../components/Trusted/Trusted";
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
         <LawyerContainer />
         <ReviewContainer />
         <Trusted />
+        <ServiceContainer />
       </div>
       <CallToAction />
       <Footer />
