@@ -1,5 +1,10 @@
 import React from "react";
 
+// Icons
+import { RiFacebookFill } from "react-icons/ri";
+import { RiInstagramFill } from "react-icons/ri";
+import { RiYoutubeFill } from "react-icons/ri";
+
 const Footer = () => {
   return (
     <div className="px-12 py-8 text-gray-200 bg-gray-800 md:px-32 md:py-16">
@@ -80,6 +85,12 @@ const Footer = () => {
                   Subscribe
                 </button>
               </form>
+            </div>
+            <div className="flex items-center justify-center gap-4 mt-8">
+              <p className="text-lg font-semibold">Find us on</p>
+              <RiFacebookFill className="text-2xl transition-all duration-500 transform cursor-pointer hover:scale-105 active:bg-gray-600" />
+              <RiInstagramFill className="text-2xl transition-all duration-500 transform cursor-pointer hover:scale-105 active:bg-gray-600" />
+              <RiYoutubeFill className="text-2xl transition-all duration-500 transform cursor-pointer hover:scale-105 active:bg-gray-600" />
             </div>
           </section>
         </div>
