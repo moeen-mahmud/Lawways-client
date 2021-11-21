@@ -5,11 +5,11 @@ const Menu = ({ openMenu }) => {
   return (
     <div>
       {openMenu && (
-        <div className="menu-style bg-gray-800 text-gray-100">
-          <div className="flex justify-center items-center">
-            <nav className="flex flex-col gap-3 justify-center text-center">
+        <div className="text-gray-100 bg-gray-800 menu-style">
+          <div className="flex items-center justify-center">
+            <nav className="flex flex-col justify-center gap-3 text-center">
               <NavLink
-                className="font-semibold text-lg"
+                className="text-lg font-semibold"
                 style={({ isActive }) => ({
                   color: isActive ? "gray" : "rgb(229, 231, 235)",
                 })}
@@ -18,16 +18,7 @@ const Menu = ({ openMenu }) => {
                 Home
               </NavLink>
               <NavLink
-                className="font-semibold text-lg"
-                style={({ isActive }) => ({
-                  color: isActive ? "gray" : "rgb(229, 231, 235)",
-                })}
-                to="/explore"
-              >
-                Explore
-              </NavLink>
-              <NavLink
-                className="font-semibold text-lg"
+                className="text-lg font-semibold"
                 style={({ isActive }) => ({
                   color: isActive ? "gray" : "rgb(229, 231, 235)",
                 })}

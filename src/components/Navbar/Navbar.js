@@ -52,15 +52,6 @@ const Navbar = () => {
                 style={({ isActive }) => ({
                   color: isActive ? "gray" : "#232832",
                 })}
-                to="/explore"
-              >
-                Explore
-              </NavLink>
-              <NavLink
-                className="text-lg font-semibold"
-                style={({ isActive }) => ({
-                  color: isActive ? "gray" : "#232832",
-                })}
                 to="/about"
               >
                 About

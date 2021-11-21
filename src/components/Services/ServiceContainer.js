@@ -8,7 +8,6 @@ const ServiceContainer = () => {
 
   useEffect(() => {
     axios.get("http://localhost:5000/services").then((res) => {
-      console.log(res.data);
       setServices(res.data);
     });
   }, []);
