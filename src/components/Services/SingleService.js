@@ -1,13 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router";
 
 const SingleService = ({ service }) => {
-  const {
-    serviceName,
-    serviceBrief,
-    serviceDetails,
-    servicePrice,
-    serviceFeatures,
-  } = service;
+  const { _id, serviceName, serviceBrief, servicePrice } = service;
+
+  const navigate = useNavigate();
+
   return (
     <div className="px-8 py-6 rounded shadow-lg">
       <section className="py-4 border-b-2 border-gray-300">
@@ -27,7 +25,10 @@ const SingleService = ({ service }) => {
         </h4>
       </section>
       <section className="mt-4">
-        <button className="px-6 py-2 text-gray-200 transition-all duration-500 bg-gray-800 rounded hover:bg-gray-600 active:bg-gray-400">
+        <button
+          onClick={() => navigate(`/services/${_id}`)}
+          className="px-6 py-2 text-gray-200 transition-all duration-500 bg-gray-800 rounded hover:bg-gray-600 active:bg-gray-400"
+        >
           Learn More
         </button>
       </section>
@@ -36,11 +37,3 @@ const SingleService = ({ service }) => {
 };
 
 export default SingleService;
-
-// {
-//   serviceFeatures.map((sf) => (
-//     <ul key={sf}>
-//       <li>{sf}</li>
-//     </ul>
-//   ));
-// }
