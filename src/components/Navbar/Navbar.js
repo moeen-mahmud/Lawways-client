@@ -12,8 +12,11 @@ import { FaTimes } from "react-icons/fa";
 // Importing stylesheet
 import "./Navbar.css";
 import Menu from "./Menu";
+import useAuth from "../../hooks/useAuth";
 
 const Navbar = () => {
+  const { user, logOut } = useAuth();
+
   const [openMenu, setOpenMenu] = useState(false);
 
   const navigate = useNavigate();
@@ -58,15 +61,21 @@ const Navbar = () => {
               >
                 About
               </NavLink>
-              <NavLink
-                className="text-lg font-semibold"
-                style={({ isActive }) => ({
-                  color: isActive ? "gray" : "#232832",
-                })}
-                to="/login"
-              >
-                Login
-              </NavLink>
+              {user.email ? (
+                <button onClick={logOut} className="text-lg font-semibold">
+                  Logout
+                </button>
+              ) : (
+                <NavLink
+                  className="text-lg font-semibold"
+                  style={({ isActive }) => ({
+                    color: isActive ? "gray" : "#232832",
+                  })}
+                  to="/login"
+                >
+                  Login
+                </NavLink>
+              )}
             </nav>
           </div>
         </div>
