@@ -1,14 +1,16 @@
 import React from "react";
 
 import { MdKeyboardBackspace } from "react-icons/md";
-import { useNavigate } from "react-router";
 
 const BackButton = () => {
-  const navigate = useNavigate();
+  const handleBackButton = () => {
+    window.history.back();
+  };
+
   return (
     <div className="flex justify-start mt-6 md:px-12">
       <button
-        onClick={() => navigate("/home")}
+        onClick={handleBackButton}
         className="px-6 py-2 text-2xl text-gray-800"
       >
         <MdKeyboardBackspace className="text-4xl" />
