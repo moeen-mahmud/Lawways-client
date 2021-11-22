@@ -6,6 +6,7 @@ import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
 import PlaceBooking from "./Pages/PlaceBooking/PlaceBooking";
 import Register from "./Pages/Register/Register";
+import Private from "./Pages/Private/Private";
 
 function App() {
   return (
@@ -19,7 +20,14 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/services/:id" element={<ServiceDetails />} />
-            <Route path="/place-booking/:id" element={<PlaceBooking />} />
+            <Route
+              path="/place-booking/:id"
+              element={
+                <Private>
+                  <PlaceBooking />
+                </Private>
+              }
+            />
           </Routes>
         </Router>
       </AuthProvider>

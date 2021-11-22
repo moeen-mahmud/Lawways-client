@@ -61,6 +61,11 @@ const Navbar = () => {
               >
                 About
               </NavLink>
+              {user.email && (
+                <span className="text-lg font-semibold">
+                  {user.displayName}
+                </span>
+              )}
               {user.email ? (
                 <button onClick={logOut} className="text-lg font-semibold">
                   Logout
