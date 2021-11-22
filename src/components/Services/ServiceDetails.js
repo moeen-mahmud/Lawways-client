@@ -15,17 +15,16 @@ const ServiceDetails = () => {
 
   useEffect(() => {
     axios.get(`http://localhost:5000/services/${id}`).then((res) => {
-      console.log(res.data);
       setService(res.data);
     });
   }, [id]);
 
   return (
     <div>
-      <div className="flex justify-start px-4 mt-6 md:m-6 md:px-12">
+      <div className="flex justify-start mt-6 md:px-12">
         <button
           onClick={() => navigate("/home")}
-          className="px-6 py-2 text-gray-200 transition-all duration-200 bg-gray-800 rounded hover:bg-gray-700 active:bg-gray-500"
+          className="px-6 py-2 text-2xl text-gray-800"
         >
           <MdKeyboardBackspace className="text-4xl" />
         </button>

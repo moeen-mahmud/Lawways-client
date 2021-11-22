@@ -4,6 +4,9 @@ import Navbar from "../../components/Navbar/Navbar";
 // about images
 import AboutMain from "../../assets/about-main.jpg";
 import AboutHelp from "../../assets/about-help.jpg";
+import Footer from "../../components/Footer/Footer";
+
+// TODO: Will have to add FAQs
 
 const About = () => {
   return (
@@ -58,6 +61,7 @@ const About = () => {
           </p>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };
