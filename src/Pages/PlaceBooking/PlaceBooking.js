@@ -1,20 +1,36 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import BackButton from "../../components/BackButton/BackButton";
 import useAuth from "../../hooks/useAuth";
-
+import swal from "@sweetalert/with-react";
 const PlaceBooking = () => {
   const { id } = useParams();
   const { user } = useAuth();
 
   const [service, setService] = useState({});
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     axios.get(`http://localhost:5000/services/${id}`).then((res) => {
       setService(res.data);
     });
   }, [id]);
+
+  const handleCancelService = () => {
+    swal({
+      title: "Are you sure?",
+      text: "You can always select the service later",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willCancel) => {
+      if (willCancel) {
+        navigate("/");
+      }
+    });
+  };
 
   return (
     <div>
@@ -105,15 +121,23 @@ const PlaceBooking = () => {
                 />
               </div>
             </div>
-            <div className="flex items-center justify-end gap-4 mt-4 md:gap-8">
-              <button className="px-6 py-2 border border-gray-700 rounded">
-                Cancel
-              </button>
-              <button className="px-6 py-2 text-gray-200 bg-gray-800 rounded">
+            <div className="flex items-center justify-end gap-4 mt-4 md:gap-6">
+              <button
+                type="submit"
+                className="px-6 py-2 text-gray-200 bg-gray-800 rounded"
+              >
                 Confirm
               </button>
             </div>
           </form>
+          <div className="-mt-10 ml-28 md:ml-48">
+            <button
+              onClick={handleCancelService}
+              className="px-6 py-2 transition-all duration-200 border border-gray-700 rounded active:bg-gray-500"
+            >
+              Cancel
+            </button>
+          </div>
         </section>
         <section>
           <h2 className="font-serif text-3xl font-bold text-center text-gray-800 md:text-left">
