@@ -9,6 +9,7 @@ const PlaceBooking = () => {
   const { user } = useAuth();
 
   const [service, setService] = useState({});
+  const [orderData, setOrderData] = useState({});
 
   const navigate = useNavigate();
 
@@ -32,6 +33,34 @@ const PlaceBooking = () => {
     });
   };
 
+  const handleOrderData = (e) => {
+    const field = e.target.name;
+    const value = e.target.value;
+
+    const newOrderData = { ...orderData };
+    newOrderData[field] = value;
+    setOrderData(newOrderData);
+  };
+
+  const handleConfirmService = (e) => {
+    e.preventDefault();
+
+    axios
+      .post("http://localhost:5000/orders", {
+        name: user.displayName,
+        email: user.email,
+        address: orderData.address,
+        userAge: orderData.age,
+        userPhone: orderData.phone,
+        orderItem: service.serviceName,
+        orderPrice: service.servicePrice,
+        orderImage: service.serviceImage,
+      })
+      .then((res) => {
+        console.log(res.data);
+      });
+  };
+
   return (
     <div>
       <BackButton />
@@ -40,7 +69,10 @@ const PlaceBooking = () => {
           <h2 className="font-serif text-3xl font-bold text-gray-800">
             Your Details
           </h2>
-          <form className="flex flex-col gap-4 mt-4">
+          <form
+            onSubmit={handleConfirmService}
+            className="flex flex-col gap-4 mt-4"
+          >
             <div className="flex flex-col justify-between gap-4 md:gap-0 md:flex-row">
               <div className="flex flex-col gap-2">
                 <label
@@ -86,6 +118,7 @@ const PlaceBooking = () => {
               rows="5"
               placeholder="171, Nikunja, Dhaka"
               required
+              onBlur={handleOrderData}
             />
             <div className="flex flex-col justify-between gap-4 md:gap-0 md:flex-row">
               <div className="flex flex-col gap-2">
@@ -102,6 +135,7 @@ const PlaceBooking = () => {
                   min="18"
                   placeholder="18"
                   required
+                  onBlur={handleOrderData}
                 />
               </div>
               <div className="flex flex-col gap-2">
@@ -118,6 +152,7 @@ const PlaceBooking = () => {
                   min="10"
                   placeholder="11XXXXXXX"
                   required
+                  onBlur={handleOrderData}
                 />
               </div>
             </div>
