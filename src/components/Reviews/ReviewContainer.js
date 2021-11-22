@@ -1,10 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 import Slider from "react-slick";
 import SingleReview from "./SingleReview";
 
 const ReviewContainer = () => {
   const [reviews, setReviews] = useState([]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios.get("http://localhost:5000/reviews").then((res) => {
@@ -73,7 +76,10 @@ const ReviewContainer = () => {
           small monthly fee and get access to experienced lawyers that can help
           you with your legal issue.
         </p>
-        <button className="px-6 py-2 mt-8 text-gray-100 transition-all duration-500 bg-gray-800 rounded hover:bg-gray-600 active:bg-black">
+        <button
+          onClick={() => navigate("/about")}
+          className="px-6 py-2 mt-8 text-gray-100 transition-all duration-500 bg-gray-800 rounded hover:bg-gray-600 active:bg-black"
+        >
           Learn More
         </button>
       </div>
