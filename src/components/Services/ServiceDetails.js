@@ -60,7 +60,10 @@ const ServiceDetails = () => {
                   ? `${service.servicePrice}`
                   : `${service.servicePrice}/month`}
               </button>
-              <button className="px-6 py-2 text-gray-200 transition-all duration-200 bg-gray-800 rounded hover:bg-gray-700 active:bg-gray-500">
+              <button
+                onClick={() => navigate(`/place-booking/${service._id}`)}
+                className="px-6 py-2 text-gray-200 transition-all duration-200 bg-gray-800 rounded hover:bg-gray-700 active:bg-gray-500"
+              >
                 Book Now
               </button>
             </div>
