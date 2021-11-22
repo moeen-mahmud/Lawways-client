@@ -2,6 +2,8 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
   onAuthStateChanged,
   updateProfile,
   signOut,
@@ -18,6 +20,7 @@ const useFirebase = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const auth = getAuth();
+  const googlePrivider = new GoogleAuthProvider();
 
   const registerUser = (email, password, name, navigate) => {
     setIsLoading(true);
@@ -64,6 +67,22 @@ const useFirebase = () => {
       .finally(() => setIsLoading(false));
   };
 
+  const signInUsingGoogle = (location, navigate) => {
+    setIsLoading(true);
+    signInWithPopup(auth, googlePrivider)
+      .then((result) => {
+        const user = result.user;
+        const destination = location?.state?.from || "/";
+        navigate(destination);
+        setAuthError("");
+      })
+      .catch((err) => {
+        console.log(err.message);
+        setAuthError(err.message);
+      })
+      .finally(() => setIsLoading(false));
+  };
+
   useEffect(() => {
     const unsubscribed = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -94,6 +113,7 @@ const useFirebase = () => {
     isLoading,
     registerUser,
     logInUser,
+    signInUsingGoogle,
     logOut,
   };
 };

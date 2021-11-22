@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 import { FcGoogle } from "react-icons/fc";
 import BackButton from "../../components/BackButton/BackButton";
@@ -9,8 +9,9 @@ import { ClipLoader } from "react-spinners";
 const Register = () => {
   const [userData, setUserData] = useState({});
 
-  const { registerUser, isLoading } = useAuth();
+  const { registerUser, signInUsingGoogle, isLoading } = useAuth();
 
+  const location = useLocation();
   const navigate = useNavigate();
 
   const handleUserData = (e) => {
@@ -82,7 +83,10 @@ const Register = () => {
               </div>
               <p className="text-sm text-center">Or</p>
               <div className="mt-4 text-center">
-                <button className="flex items-center justify-center w-full gap-4 py-2 border border-gray-700 rounded">
+                <button
+                  onClick={() => signInUsingGoogle(location, navigate)}
+                  className="flex items-center justify-center w-full gap-4 py-2 border border-gray-700 rounded"
+                >
                   <FcGoogle /> Continue With Google
                 </button>
                 <h3 className="mt-4 text-sm font-medium text-gray-600">
