@@ -58,7 +58,6 @@ const PlaceBooking = () => {
         orderStatus: "Pending",
       })
       .then((res) => {
-        console.log(res.data);
         if (res.data.insertedId) {
           swal({
             title: "Order has been submitted!",
