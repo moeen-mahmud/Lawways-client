@@ -1,6 +1,6 @@
 // Importing necessary module
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 // Importing brand logo
 import brandLogo from "../../assets/main-logo.png";
@@ -16,6 +16,8 @@ import Menu from "./Menu";
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
 
+  const navigate = useNavigate();
+
   const handleMobileMenu = () => {
     setOpenMenu(!openMenu);
   };
@@ -24,7 +26,7 @@ const Navbar = () => {
     <div>
       <header className="md:mb-2">
         <div className="flex items-center justify-between px-8 py-4">
-          <div>
+          <div className="cursor-pointer" onClick={() => navigate("/")}>
             <img className="w-2/4" src={brandLogo} alt="Lawways" />
           </div>
           <div className="z-10 block md:hidden">
@@ -55,6 +57,15 @@ const Navbar = () => {
                 to="/about"
               >
                 About
+              </NavLink>
+              <NavLink
+                className="text-lg font-semibold"
+                style={({ isActive }) => ({
+                  color: isActive ? "gray" : "#232832",
+                })}
+                to="/login"
+              >
+                Login
               </NavLink>
             </nav>
           </div>

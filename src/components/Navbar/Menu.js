@@ -26,6 +26,15 @@ const Menu = ({ openMenu }) => {
               >
                 About
               </NavLink>
+              <NavLink
+                className="text-lg font-semibold"
+                style={({ isActive }) => ({
+                  color: isActive ? "gray" : "rgb(229, 231, 235)",
+                })}
+                to="/login"
+              >
+                Login
+              </NavLink>
             </nav>
           </div>
         </div>

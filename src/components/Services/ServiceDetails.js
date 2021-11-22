@@ -1,11 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
-import { MdKeyboardBackspace } from "react-icons/md";
 import { useNavigate, useParams } from "react-router";
 
 // Icons
 import { BsPatchCheckFill } from "react-icons/bs";
+import BackButton from "../BackButton/BackButton";
 
 const ServiceDetails = () => {
   const { id } = useParams();
@@ -21,14 +21,7 @@ const ServiceDetails = () => {
 
   return (
     <div>
-      <div className="flex justify-start mt-6 md:px-12">
-        <button
-          onClick={() => navigate("/home")}
-          className="px-6 py-2 text-2xl text-gray-800"
-        >
-          <MdKeyboardBackspace className="text-4xl" />
-        </button>
-      </div>
+      <BackButton />
       <div className="px-4 py-12 md:px-20">
         <section className="flex flex-col-reverse items-center justify-around gap-8 md:flex-row md:gap-16">
           <div className="md:w-1/2">
