@@ -55,9 +55,17 @@ const PlaceBooking = () => {
         orderItem: service.serviceName,
         orderPrice: service.servicePrice,
         orderImage: service.serviceImage,
+        orderStatus: "Pending",
       })
       .then((res) => {
         console.log(res.data);
+        if (res.data.insertedId) {
+          swal({
+            title: "Order has been submitted!",
+            text: "Your order status will updated soon.",
+            icon: "success",
+          }).then(() => navigate("/"));
+        }
       });
   };
 
