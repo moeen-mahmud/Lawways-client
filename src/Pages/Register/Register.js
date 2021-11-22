@@ -1,10 +1,32 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 import { FcGoogle } from "react-icons/fc";
 import BackButton from "../../components/BackButton/BackButton";
+import useAuth from "../../hooks/useAuth";
 
 const Register = () => {
+  const [userData, setUserData] = useState({});
+
+  const { registerUser } = useAuth();
+
+  const navigate = useNavigate();
+
+  const handleUserData = (e) => {
+    const field = e.target.name;
+    const value = e.target.value;
+
+    const newUserData = { ...userData };
+    newUserData[field] = value;
+    setUserData(newUserData);
+  };
+
+  const handleRegisterUser = (e) => {
+    e.preventDefault();
+
+    registerUser(userData.email, userData.password, userData.name, navigate);
+  };
+
   return (
     <>
       <BackButton />
@@ -17,26 +39,38 @@ const Register = () => {
             Sign up or continue with Google
           </p>
           <div className="my-4">
-            <form className="flex flex-col justify-center gap-4">
+            <form
+              onSubmit={handleRegisterUser}
+              className="flex flex-col justify-center gap-4"
+            >
               <input
                 className="p-2 text-gray-700 border border-gray-400 rounded"
                 type="text"
                 name="name"
                 placeholder="Your Name"
+                required
+                onBlur={handleUserData}
               />
               <input
                 className="p-2 text-gray-700 border border-gray-400 rounded"
                 type="email"
                 name="email"
                 placeholder="Email"
+                required
+                onBlur={handleUserData}
               />
               <input
                 className="p-2 text-gray-700 border border-gray-400 rounded"
                 type="password"
                 name="password"
                 placeholder="Password"
+                required
+                onBlur={handleUserData}
               />
-              <button className="py-2 text-gray-200 bg-gray-800 rounded">
+              <button
+                type="submit"
+                className="py-2 text-gray-200 bg-gray-800 rounded"
+              >
                 Sign Up
               </button>
             </form>
