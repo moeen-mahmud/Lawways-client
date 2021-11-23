@@ -41,15 +41,21 @@ const UserOrder = () => {
   return (
     <div>
       <h1 className="mb-4 font-serif text-3xl font-semibold">My orders</h1>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-        {orders.map((order) => (
-          <SingleOrder
-            key={order._id}
-            order={order}
-            handleDeleteOrder={handleDeleteOrder}
-          />
-        ))}
-      </div>
+      {orders.length === 0 ? (
+        <div className="mt-8">
+          <h1 className="text-3xl">Currently, you have no selected service!</h1>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+          {orders.map((order) => (
+            <SingleOrder
+              key={order._id}
+              order={order}
+              handleDeleteOrder={handleDeleteOrder}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
