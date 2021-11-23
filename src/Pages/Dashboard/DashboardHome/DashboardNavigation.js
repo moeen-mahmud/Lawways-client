@@ -41,7 +41,7 @@ const DashboardNavigation = () => {
               onClick={() => navigate("/dashboard/user-orders")}
               className="flex items-center gap-2 p-2 text-lg font-semibold text-gray-700 rounded active:bg-gray-500"
             >
-              <FaClipboardCheck className="text-2xl" /> My Orders
+              <FaClipboardCheck className="text-2xl" /> My Services
             </button>
           </li>
           <li>

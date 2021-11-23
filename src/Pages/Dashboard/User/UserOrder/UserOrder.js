@@ -40,7 +40,11 @@ const UserOrder = () => {
 
   return (
     <div>
-      <h1 className="mb-4 font-serif text-3xl font-semibold">My orders</h1>
+      {orders.length > 0 && (
+        <h1 className="mb-4 font-serif text-3xl font-semibold">
+          Selected {orders.length > 1 ? "services" : "service"}
+        </h1>
+      )}
       {orders.length === 0 ? (
         <div className="mt-8">
           <h1 className="text-3xl">Currently, you have no selected service!</h1>
