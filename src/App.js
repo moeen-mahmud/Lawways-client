@@ -16,6 +16,7 @@ import ManageUserService from "./Pages/Dashboard/Admin/ManageUserService/ManageU
 import MakeAdmin from "./Pages/Dashboard/Admin/MakeAdmin/MakeAdmin";
 import AddService from "./Pages/Dashboard/Admin/AddService/AddService";
 import ManageService from "./Pages/Dashboard/Admin/ManageService/ManageService";
+import AddLawyer from "./Pages/Dashboard/Admin/AddLawyer/AddLawyer";
 
 function App() {
   return (
@@ -56,6 +57,7 @@ function App() {
               />
               <Route path="make-admin" element={<MakeAdmin />} />
               <Route path="add-service" element={<AddService />} />
+              <Route path="add-lawyer" element={<AddLawyer />} />
             </Route>
           </Routes>
         </Router>

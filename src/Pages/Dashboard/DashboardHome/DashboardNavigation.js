@@ -9,6 +9,7 @@ import { BsGearFill } from "react-icons/bs";
 import { MdSupervisedUserCircle } from "react-icons/md";
 import { MdAdminPanelSettings } from "react-icons/md";
 import { MdAddCircle } from "react-icons/md";
+import { FaUserGraduate } from "react-icons/fa";
 
 import { useNavigate } from "react-router";
 import useAuth from "../../../hooks/useAuth";
@@ -94,6 +95,14 @@ const DashboardNavigation = () => {
               className="flex items-center gap-2 p-2 text-lg font-semibold text-gray-700 rounded active:bg-gray-500"
             >
               <MdAddCircle className="text-2xl" /> Add Service
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => navigate("/dashboard/add-service")}
+              className="flex items-center gap-2 p-2 text-lg font-semibold text-gray-700 rounded active:bg-gray-500"
+            >
+              <FaUserGraduate className="text-2xl" /> Add Lawyer
             </button>
           </li>
         </ul>
