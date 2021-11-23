@@ -1,5 +1,7 @@
 import React from "react";
 
+import ReviewPlaceholderImage from "../../assets/review-placeholder.jpg";
+
 const SingleReview = ({ review }) => {
   const { reviewerName, reviewerImage, reviewerDesignation, reviewerDetails } =
     review;
@@ -7,7 +9,9 @@ const SingleReview = ({ review }) => {
   return (
     <div
       style={{
-        backgroundImage: `url("${reviewerImage}")`,
+        backgroundImage: `url("${
+          reviewerImage ? reviewerImage : ReviewPlaceholderImage
+        }")`,
         minWidth: "300px",
         minHeight: "500px",
         backgroundPosition: "top",
@@ -17,7 +21,7 @@ const SingleReview = ({ review }) => {
         borderRadius: "5px",
       }}
     >
-      <div className="absolute bottom-0 p-3 bg-gray-800 rounded-b">
+      <div className="absolute bottom-0 w-full p-3 bg-gray-800 rounded-b">
         <h5 className="text-xs leading-relaxed text-gray-200 md:text-base">
           "{reviewerDetails}"
         </h5>
