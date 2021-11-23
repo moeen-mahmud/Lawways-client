@@ -7,6 +7,10 @@ import Login from "./Pages/Login/Login";
 import PlaceBooking from "./Pages/PlaceBooking/PlaceBooking";
 import Register from "./Pages/Register/Register";
 import Private from "./Pages/Private/Private";
+import DashboardHome from "./Pages/Dashboard/DashboardHome/DashboardHome";
+import UserOrder from "./Pages/Dashboard/User/UserOrder/UserOrder";
+import Payment from "./Pages/Dashboard/User/Payment/Payment";
+import UserReview from "./Pages/Dashboard/User/UserReview/UserReview";
 
 function App() {
   return (
@@ -28,6 +32,11 @@ function App() {
                 </Private>
               }
             />
+            <Route path="/dashboard" element={<DashboardHome />}>
+              <Route path="user-orders" element={<UserOrder />} />
+              <Route path="payment" element={<Payment />} />
+              <Route path="user-review" element={<UserReview />} />
+            </Route>
           </Routes>
         </Router>
       </AuthProvider>

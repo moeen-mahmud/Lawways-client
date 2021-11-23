@@ -67,9 +67,17 @@ const Navbar = () => {
                 </span>
               )}
               {user.email ? (
-                <button onClick={logOut} className="text-lg font-semibold">
-                  Logout
-                </button>
+                <>
+                  <button
+                    onClick={() => navigate("/dashboard")}
+                    className="text-lg font-semibold"
+                  >
+                    Dashboard
+                  </button>
+                  <button onClick={logOut} className="text-lg font-semibold">
+                    Logout
+                  </button>
+                </>
               ) : (
                 <NavLink
                   className="text-lg font-semibold"
