@@ -12,6 +12,10 @@ import UserOrder from "./Pages/Dashboard/User/UserOrder/UserOrder";
 import Payment from "./Pages/Dashboard/User/Payment/Payment";
 import UserReview from "./Pages/Dashboard/User/UserReview/UserReview";
 import Profile from "./Pages/Dashboard/Profile/Profile";
+import ManageUserService from "./Pages/Dashboard/Admin/ManageUserService/ManageUserService";
+import MakeAdmin from "./Pages/Dashboard/Admin/MakeAdmin/MakeAdmin";
+import AddService from "./Pages/Dashboard/Admin/AddService/AddService";
+import ManageService from "./Pages/Dashboard/Admin/ManageService/ManageService";
 
 function App() {
   return (
@@ -45,6 +49,13 @@ function App() {
               <Route path="user-orders" element={<UserOrder />} />
               <Route path="payment" element={<Payment />} />
               <Route path="user-review" element={<UserReview />} />
+              <Route path="manage-services" element={<ManageService />} />
+              <Route
+                path="manage-user-services"
+                element={<ManageUserService />}
+              />
+              <Route path="make-admin" element={<MakeAdmin />} />
+              <Route path="add-service" element={<AddService />} />
             </Route>
           </Routes>
         </Router>
