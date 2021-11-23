@@ -1,10 +1,13 @@
 import React from "react";
 
 import { MdKeyboardBackspace } from "react-icons/md";
+import { useNavigate } from "react-router";
 
 const BackButton = () => {
+  const navigate = useNavigate();
+
   const handleBackButton = () => {
-    window.history.back();
+    navigate("/");
   };
 
   return (

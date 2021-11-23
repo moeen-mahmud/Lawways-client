@@ -11,6 +11,7 @@ import DashboardHome from "./Pages/Dashboard/DashboardHome/DashboardHome";
 import UserOrder from "./Pages/Dashboard/User/UserOrder/UserOrder";
 import Payment from "./Pages/Dashboard/User/Payment/Payment";
 import UserReview from "./Pages/Dashboard/User/UserReview/UserReview";
+import Profile from "./Pages/Dashboard/Profile/Profile";
 
 function App() {
   return (
@@ -32,7 +33,15 @@ function App() {
                 </Private>
               }
             />
-            <Route path="/dashboard" element={<DashboardHome />}>
+            <Route
+              path="/dashboard"
+              element={
+                <Private>
+                  <DashboardHome />
+                </Private>
+              }
+            >
+              <Route path=":user" element={<Profile />} />
               <Route path="user-orders" element={<UserOrder />} />
               <Route path="payment" element={<Payment />} />
               <Route path="user-review" element={<UserReview />} />

@@ -69,7 +69,7 @@ const Navbar = () => {
               {user.email ? (
                 <>
                   <button
-                    onClick={() => navigate("/dashboard")}
+                    onClick={() => navigate(`/dashboard/${user.displayName}`)}
                     className="text-lg font-semibold"
                   >
                     Dashboard
