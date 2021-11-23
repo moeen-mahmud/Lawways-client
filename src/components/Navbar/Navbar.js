@@ -61,20 +61,18 @@ const Navbar = () => {
               >
                 About
               </NavLink>
-              {user.email && (
-                <span className="text-lg font-semibold">
-                  {user.displayName}
-                </span>
-              )}
               {user.email ? (
                 <>
                   <button
                     onClick={() => navigate(`/dashboard/${user.displayName}`)}
-                    className="text-lg font-semibold"
+                    className="text-lg font-semibold text-gray-700"
                   >
                     Dashboard
                   </button>
-                  <button onClick={logOut} className="text-lg font-semibold">
+                  <button
+                    onClick={logOut}
+                    className="text-lg font-semibold text-gray-700"
+                  >
                     Logout
                   </button>
                 </>

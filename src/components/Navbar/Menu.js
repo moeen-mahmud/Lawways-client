@@ -1,7 +1,11 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 
 const Menu = ({ openMenu }) => {
+  const { user, logOut } = useAuth();
+  const navigate = useNavigate();
+
   return (
     <div>
       {openMenu && (
@@ -26,15 +30,34 @@ const Menu = ({ openMenu }) => {
               >
                 About
               </NavLink>
-              <NavLink
-                className="text-lg font-semibold"
-                style={({ isActive }) => ({
-                  color: isActive ? "gray" : "rgb(229, 231, 235)",
-                })}
-                to="/login"
-              >
-                Login
-              </NavLink>
+              {user.email ? (
+                <>
+                  <button
+                    style={{ color: "rgb(229, 231, 235)" }}
+                    className="text-lg font-semibold"
+                    onClick={() => navigate(`/dashboard/${user.displayName}`)}
+                  >
+                    Dashboard
+                  </button>
+                  <button
+                    style={{ color: "rgb(229, 231, 235)" }}
+                    className="text-lg font-semibold"
+                    onClick={logOut}
+                  >
+                    Logout
+                  </button>
+                </>
+              ) : (
+                <NavLink
+                  className="text-lg font-semibold"
+                  style={({ isActive }) => ({
+                    color: isActive ? "gray" : "rgb(229, 231, 235)",
+                  })}
+                  to="/login"
+                >
+                  Login
+                </NavLink>
+              )}
             </nav>
           </div>
         </div>
