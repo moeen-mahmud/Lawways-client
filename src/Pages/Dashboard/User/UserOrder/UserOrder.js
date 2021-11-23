@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import useAuth from "../../../../hooks/useAuth";
 import SingleOrder from "./SingleOrder";
+import swal from "@sweetalert/with-react";
 
 const UserOrder = () => {
   const [orders, setOrders] = useState([]);
@@ -15,12 +16,38 @@ const UserOrder = () => {
       });
   }, [user.email]);
 
+  const handleDeleteOrder = (id) => {
+    swal({
+      title: "Are you sure?",
+      text: "Once canceled you may select this service again from service page.",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        axios.delete(`http://localhost:5000/orders/${id}`).then((res) => {
+          if (res.data.deletedCount > 0) {
+            swal("Service has been canceled", {
+              icon: "success",
+            });
+            const newOrders = orders.filter((order) => order._id !== id);
+            setOrders(newOrders);
+          }
+        });
+      }
+    });
+  };
+
   return (
     <div>
       <h1 className="mb-4 font-serif text-3xl font-semibold">My orders</h1>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
         {orders.map((order) => (
-          <SingleOrder key={order._id} order={order} />
+          <SingleOrder
+            key={order._id}
+            order={order}
+            handleDeleteOrder={handleDeleteOrder}
+          />
         ))}
       </div>
     </div>

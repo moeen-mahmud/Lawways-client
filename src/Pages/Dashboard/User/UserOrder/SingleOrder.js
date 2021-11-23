@@ -1,7 +1,7 @@
 import React from "react";
 
-const SingleOrder = ({ order }) => {
-  const { orderImage, orderItem, orderPrice, orderStatus } = order;
+const SingleOrder = ({ order, handleDeleteOrder }) => {
+  const { _id, orderImage, orderItem, orderPrice, orderStatus } = order;
   return (
     <div className="flex items-center gap-4 px-2 py-4 rounded shadow-lg">
       <div className="w-1/2">
@@ -26,7 +26,10 @@ const SingleOrder = ({ order }) => {
           >
             {orderStatus}
           </p>
-          <button className="px-2 py-1 text-sm text-gray-100 bg-yellow-600 rounded active:bg-yellow-900">
+          <button
+            onClick={() => handleDeleteOrder(_id)}
+            className="px-2 py-1 text-sm text-gray-100 bg-yellow-600 rounded active:bg-yellow-900"
+          >
             Cancel
           </button>
         </div>
