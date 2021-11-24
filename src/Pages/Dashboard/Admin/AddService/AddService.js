@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useState } from "react";
 
+import swal from "@sweetalert/with-react";
+
 const AddService = () => {
   const [serviceData, setServiceData] = useState({});
   const [featuresData, setFeaturesData] = useState({});
@@ -36,7 +38,17 @@ const AddService = () => {
         servicePrice: serviceData.servicePrice,
       })
       .then((res) => {
-        console.log(res.data);
+        if (res.data.insertedId) {
+          swal({
+            title: "Nice!",
+            text: "Service added successfully",
+            icon: "success",
+          }).then((okay) => {
+            if (okay) {
+              window.location.reload();
+            }
+          });
+        }
       });
   };
 
