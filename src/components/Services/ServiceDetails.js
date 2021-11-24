@@ -36,14 +36,46 @@ const ServiceDetails = () => {
                 Things you will get with us
               </h3>
               <div className="grid grid-cols-1 gap-2 mt-6 md:grid-cols-2">
-                {service.serviceFeatures?.map((sf) => (
-                  <div className="flex items-center gap-4 mb-2" key={sf}>
-                    <p className="text-2xl text-green-500">
-                      <BsPatchCheckFill />
-                    </p>
-                    <p className="text-gray-600">{sf}</p>
-                  </div>
-                ))}
+                <div className="flex items-center gap-4 mb-2">
+                  <p className="text-2xl text-green-500">
+                    <BsPatchCheckFill />
+                  </p>
+                  <p className="text-gray-600">
+                    {service.serviceFeatures?.feature1}
+                  </p>
+                </div>
+                <div className="flex items-center gap-4 mb-2">
+                  <p className="text-2xl text-green-500">
+                    <BsPatchCheckFill />
+                  </p>
+                  <p className="text-gray-600">
+                    {service.serviceFeatures?.feature2}
+                  </p>
+                </div>
+                <div className="flex items-center gap-4 mb-2">
+                  <p className="text-2xl text-green-500">
+                    <BsPatchCheckFill />
+                  </p>
+                  <p className="text-gray-600">
+                    {service.serviceFeatures?.feature3}
+                  </p>
+                </div>
+                <div className="flex items-center gap-4 mb-2">
+                  <p className="text-2xl text-green-500">
+                    <BsPatchCheckFill />
+                  </p>
+                  <p className="text-gray-600">
+                    {service.serviceFeatures?.feature4}
+                  </p>
+                </div>
+                <div className="flex items-center gap-4 mb-2">
+                  <p className="text-2xl text-green-500">
+                    <BsPatchCheckFill />
+                  </p>
+                  <p className="text-gray-600">
+                    {service.serviceFeatures?.feature5}
+                  </p>
+                </div>
               </div>
             </div>
             <div className="flex flex-col gap-4 mt-6 md:flex-row">
