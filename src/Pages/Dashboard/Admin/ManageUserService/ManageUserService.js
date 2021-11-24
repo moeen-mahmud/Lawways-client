@@ -54,10 +54,15 @@ const ManageUserService = () => {
           })
           .then((res) => {
             if (res.data.modifiedCount > 0) {
-              swal("Service status update successfully!", {
+              swal({
+                title: "Nice!",
+                text: "Service status updated successfully",
                 icon: "success",
+              }).then((okay) => {
+                if (okay || !okay) {
+                  window.location.reload();
+                }
               });
-              window.location.reload();
             } else {
               swal("Service status already updated!", {
                 icon: "info",
