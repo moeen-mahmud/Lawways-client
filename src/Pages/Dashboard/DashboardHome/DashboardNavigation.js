@@ -1,7 +1,7 @@
 import React from "react";
 
 import { FaClipboardCheck } from "react-icons/fa";
-import { AiFillCreditCard } from "react-icons/ai";
+// import { AiFillCreditCard } from "react-icons/ai";
 import { AiFillHome } from "react-icons/ai";
 import { MdRateReview } from "react-icons/md";
 import { BsFillPersonFill } from "react-icons/bs";
