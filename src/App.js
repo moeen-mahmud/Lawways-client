@@ -49,7 +49,7 @@ function App() {
             >
               <Route path=":user" element={<Profile />} />
               <Route path="user-orders" element={<UserOrder />} />
-              <Route path="payment" element={<Payment />} />
+              <Route path="payment/:orderId" element={<Payment />} />
               <Route path="user-review" element={<UserReview />} />
               <Route
                 path="manage-services"

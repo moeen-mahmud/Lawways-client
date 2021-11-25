@@ -94,14 +94,14 @@ const DashboardNavigation = () => {
                   <FaClipboardCheck className="text-2xl" /> My Services
                 </button>
               </li>
-              <li>
+              {/* <li>
                 <button
                   onClick={() => navigate("/dashboard/payment")}
                   className="flex items-center gap-2 p-2 text-lg font-semibold text-gray-700 rounded active:bg-gray-500"
                 >
                   <AiFillCreditCard className="text-2xl" /> Payment
                 </button>
-              </li>
+              </li> */}
               <li>
                 <button
                   onClick={() => navigate("/dashboard/user-review")}
