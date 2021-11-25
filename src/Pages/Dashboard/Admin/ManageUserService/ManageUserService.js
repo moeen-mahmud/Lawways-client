@@ -5,7 +5,7 @@ import swal from "@sweetalert/with-react";
 import { IoMdTrash } from "react-icons/io";
 import { FcSynchronize } from "react-icons/fc";
 import { FaCheckCircle } from "react-icons/fa";
-// TODO: Have to create make admin, add lawyer, payment, giving role, admin route and so on...!
+
 const ManageUserService = () => {
   const [userServices, setUserServices] = useState([]);
 
@@ -83,8 +83,8 @@ const ManageUserService = () => {
         <h2 className="font-semibold text-gray-800">Email</h2>
         <h2 className="font-semibold text-gray-800">Address</h2>
         <h2 className="font-semibold text-gray-800">Age</h2>
-        <h2 className="font-semibold text-gray-800">Phone</h2>
         <h2 className="font-semibold text-gray-800">Service</h2>
+        <h2 className="font-semibold text-gray-800">Payment</h2>
         <h2 className="font-semibold text-gray-800">Charge</h2>
         <h2 className="font-semibold text-gray-800">Actions</h2>
       </div>
@@ -97,8 +97,10 @@ const ManageUserService = () => {
           <p className="text-xs font-medium">{service.email}</p>
           <p className="text-xs font-medium">{service.address}</p>
           <p className="text-xs font-medium">{service.userAge}</p>
-          <p className="text-xs font-medium">{service.userPhone}</p>
-          <p className="text-xs font-medium">${service.orderItem}</p>
+          <p className="text-xs font-medium">{service.orderItem}</p>
+          <p className="text-xs font-medium">
+            {service.payment ? "Paid" : "Not Paid"}
+          </p>
           <p className="text-xs font-medium">${service.orderPrice}</p>
           <div className="flex flex-col items-center justify-between gap-2">
             <button

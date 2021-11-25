@@ -4,8 +4,8 @@ import React, { useEffect, useState } from "react";
 import { ClipLoader } from "react-spinners";
 
 const CheckoutForm = ({ order }) => {
-  const { orderPrice, name, email } = order;
-  const price = parseInt(orderPrice);
+  const { orderPrice, name, email, _id } = order;
+  const price = parseFloat(orderPrice);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [clientSecret, setClientSecret] = useState("");
@@ -64,6 +64,18 @@ const CheckoutForm = ({ order }) => {
       setSuccess("Payment successful");
       console.log(paymentIntent);
       setProcessing(false);
+      // Save payment to database
+      const payment = {
+        amount: paymentIntent.amount,
+        created: paymentIntent.created,
+        status: paymentIntent.status,
+        transaction: paymentIntent.client_secret,
+      };
+      axios
+        .put(`http://localhost:5000/orders/payment/${_id}`, payment)
+        .then((res) => {
+          console.log(res.data);
+        });
     }
   };
 
@@ -95,7 +107,7 @@ const CheckoutForm = ({ order }) => {
           <button
             className="px-8 py-2 mt-4 text-gray-100 bg-indigo-600 rounded "
             type="submit"
-            disabled={!stripe}
+            disabled={!stripe || success}
           >
             Pay
           </button>

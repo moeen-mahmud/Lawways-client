@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router";
 
 const SingleOrder = ({ order, handleDeleteOrder }) => {
-  const { _id, orderImage, orderItem, orderPrice, orderStatus, paymentStatus } =
+  const { _id, orderImage, orderItem, orderPrice, orderStatus, payment } =
     order;
   const navigate = useNavigate();
 
@@ -30,9 +30,9 @@ const SingleOrder = ({ order, handleDeleteOrder }) => {
           {orderStatus}
         </span>
         <div className="flex gap-4 mt-4">
-          {paymentStatus === "Paid" ? (
+          {payment ? (
             <p className="px-2 py-1 text-sm text-green-600 border-2 border-green-600 rounded">
-              {paymentStatus}
+              Paid
             </p>
           ) : (
             <button
