@@ -5,13 +5,21 @@ const SingleLawyer = ({ lawyer }) => {
 
   return (
     <div className="flex flex-col gap-6 md:flex-row">
-      <section className="w-full">
+      {lawyerImage.startsWith("/") ? (
         <img
-          className="block w-full mx-auto rounded"
-          src={lawyerImage}
+          className="rounded "
+          src={`data:image/*;base64,${lawyerImage}`}
           alt={lawyerName}
         />
-      </section>
+      ) : (
+        <section className="w-full">
+          <img
+            className="block w-full mx-auto rounded"
+            src={lawyerImage}
+            alt={lawyerName}
+          />
+        </section>
+      )}
       <section>
         <h3 className="mb-8 font-serif text-3xl font-bold text-gray-800">
           {lawyerName}
