@@ -106,9 +106,13 @@ const useFirebase = () => {
   }, [auth]);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/users/${user.email}`).then((res) => {
-      setAdmin(res.data.admin);
-    });
+    axios
+      .get(
+        `https://lawways-backend-server-moeen.azurewebsites.net/users/${user.email}`
+      )
+      .then((res) => {
+        setAdmin(res.data.admin);
+      });
   }, [user.email]);
 
   const logOut = () => {
@@ -125,16 +129,23 @@ const useFirebase = () => {
 
   const saveUser = (email, displayName) => {
     const user = { email, displayName };
-    axios.post("http://localhost:5000/users", user).then((res) => {
-      console.log(res.data);
-    });
+    axios
+      .post(
+        "https://lawways-backend-server-moeen.azurewebsites.net/users",
+        user
+      )
+      .then((res) => {
+        console.log(res.data);
+      });
   };
 
   const putUser = (email, displayName) => {
     const user = { email, displayName };
-    axios.put("http://localhost:5000/users", user).then((res) => {
-      console.log(res.data);
-    });
+    axios
+      .put("https://lawways-backend-server-moeen.azurewebsites.net/users", user)
+      .then((res) => {
+        console.log(res.data);
+      });
   };
 
   return {

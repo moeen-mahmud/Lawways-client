@@ -61,7 +61,11 @@ function App() {
               />
               <Route
                 path="manage-user-services"
-                element={<ManageUserService />}
+                element={
+                  <AdminRoute>
+                    <ManageUserService />
+                  </AdminRoute>
+                }
               />
               <Route
                 path="make-admin"

@@ -19,19 +19,24 @@ const AddLawyer = () => {
     formData.append("lawyerImage", image);
     formData.append("lawyerDetails", details);
 
-    axios.post("http://localhost:5000/lawyers", formData).then((res) => {
-      if (res.data.insertedId) {
-        swal({
-          title: "Great!",
-          text: "The lawyer added successfully",
-          icon: "success",
-        }).then((onClose) => {
-          if (onClose) {
-            window.location.reload();
-          }
-        });
-      }
-    });
+    axios
+      .post(
+        "https://lawways-backend-server-moeen.azurewebsites.net/lawyers",
+        formData
+      )
+      .then((res) => {
+        if (res.data.insertedId) {
+          swal({
+            title: "Great!",
+            text: "The lawyer added successfully",
+            icon: "success",
+          }).then((onClose) => {
+            if (onClose) {
+              window.location.reload();
+            }
+          });
+        }
+      });
   };
 
   return (

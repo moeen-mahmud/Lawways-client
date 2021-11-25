@@ -14,9 +14,13 @@ const ServiceDetails = () => {
   const [service, setService] = useState({});
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/services/${id}`).then((res) => {
-      setService(res.data);
-    });
+    axios
+      .get(
+        `https://lawways-backend-server-moeen.azurewebsites.net/services/${id}`
+      )
+      .then((res) => {
+        setService(res.data);
+      });
   }, [id]);
 
   return (

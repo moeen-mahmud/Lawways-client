@@ -10,9 +10,11 @@ const ReviewContainer = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("http://localhost:5000/reviews").then((res) => {
-      setReviews(res.data);
-    });
+    axios
+      .get("https://lawways-backend-server-moeen.azurewebsites.net/reviews")
+      .then((res) => {
+        setReviews(res.data);
+      });
   }, []);
 
   // Slider style

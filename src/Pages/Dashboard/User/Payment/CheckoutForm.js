@@ -16,7 +16,10 @@ const CheckoutForm = ({ order }) => {
 
   useEffect(() => {
     axios
-      .post("http://localhost:5000/create-payment-intent", { price })
+      .post(
+        "https://lawways-backend-server-moeen.azurewebsites.net/create-payment-intent",
+        { price }
+      )
       .then((res) => setClientSecret(res.data.clientSecret));
   }, [price]);
 
@@ -72,7 +75,10 @@ const CheckoutForm = ({ order }) => {
         transaction: paymentIntent.client_secret,
       };
       axios
-        .put(`http://localhost:5000/orders/payment/${_id}`, payment)
+        .put(
+          `https://lawways-backend-server-moeen.azurewebsites.net/orders/payment/${_id}`,
+          payment
+        )
         .then((res) => {
           console.log(res.data);
         });

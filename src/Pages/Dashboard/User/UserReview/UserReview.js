@@ -21,7 +21,7 @@ const UserReview = () => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:5000/reviews", {
+      .post("https://lawways-backend-server-moeen.azurewebsites.net/reviews", {
         reviewerName: user.displayName,
         reviewerDesignation: reviewInfo.designation,
         reviewerImage: user.photoURL ? user.photoURL : "",

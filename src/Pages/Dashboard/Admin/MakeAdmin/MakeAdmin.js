@@ -9,19 +9,24 @@ const MakeAdmin = () => {
     e.preventDefault();
 
     const user = { email };
-    axios.put("http://localhost:5000/users/admin", user).then((res) => {
-      if (res.data.modifiedCount > 0) {
-        swal({
-          title: "Great!",
-          text: "You've successfully made an admin",
-          icon: "success",
-        }).then((onClose) => {
-          if (onClose) {
-            window.location.reload();
-          }
-        });
-      }
-    });
+    axios
+      .put(
+        "https://lawways-backend-server-moeen.azurewebsites.net/users/admin",
+        user
+      )
+      .then((res) => {
+        if (res.data.modifiedCount > 0) {
+          swal({
+            title: "Great!",
+            text: "You've successfully made an admin",
+            icon: "success",
+          }).then((onClose) => {
+            if (onClose) {
+              window.location.reload();
+            }
+          });
+        }
+      });
   };
 
   return (

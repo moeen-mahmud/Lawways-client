@@ -29,7 +29,7 @@ const AddService = () => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:5000/services", {
+      .post("https://lawways-backend-server-moeen.azurewebsites.net/services", {
         serviceName: serviceData.serviceName,
         serviceImage: serviceData.serviceImage,
         serviceBrief: serviceData.serviceBrief,

@@ -14,9 +14,13 @@ const Payment = () => {
   const [order, setOrder] = useState({});
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/orders/${orderId}`).then((res) => {
-      setOrder(res.data);
-    });
+    axios
+      .get(
+        `https://lawways-backend-server-moeen.azurewebsites.net/orders/${orderId}`
+      )
+      .then((res) => {
+        setOrder(res.data);
+      });
   }, [orderId]);
 
   return (

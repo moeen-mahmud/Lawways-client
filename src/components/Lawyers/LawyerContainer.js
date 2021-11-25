@@ -7,9 +7,11 @@ const LawyerContainer = () => {
   const [lawyers, setLawyers] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/lawyers").then((res) => {
-      setLawyers(res.data);
-    });
+    axios
+      .get("https://lawways-backend-server-moeen.azurewebsites.net/lawyers")
+      .then((res) => {
+        setLawyers(res.data);
+      });
   }, []);
 
   // Slider properties

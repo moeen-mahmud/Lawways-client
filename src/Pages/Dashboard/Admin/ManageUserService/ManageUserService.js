@@ -10,9 +10,11 @@ const ManageUserService = () => {
   const [userServices, setUserServices] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/orders").then((res) => {
-      setUserServices(res.data);
-    });
+    axios
+      .get("https://lawways-backend-server-moeen.azurewebsites.net/orders")
+      .then((res) => {
+        setUserServices(res.data);
+      });
   }, []);
 
   const handleDelete = (id) => {
@@ -24,17 +26,21 @@ const ManageUserService = () => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        axios.delete(`http://localhost:5000/orders/${id}`).then((res) => {
-          if (res.data.deletedCount > 0) {
-            swal("User order has been deleted successfully", {
-              icon: "success",
-            });
-            const newUserServices = userServices.filter(
-              (order) => order._id !== id
-            );
-            setUserServices(newUserServices);
-          }
-        });
+        axios
+          .delete(
+            `https://lawways-backend-server-moeen.azurewebsites.net/orders/${id}`
+          )
+          .then((res) => {
+            if (res.data.deletedCount > 0) {
+              swal("User order has been deleted successfully", {
+                icon: "success",
+              });
+              const newUserServices = userServices.filter(
+                (order) => order._id !== id
+              );
+              setUserServices(newUserServices);
+            }
+          });
       }
     });
   };
@@ -49,9 +55,12 @@ const ManageUserService = () => {
     }).then((willUpdate) => {
       if (willUpdate) {
         axios
-          .put(`http://localhost:5000/orders/${id}`, {
-            orderStatus: "Approved",
-          })
+          .put(
+            `https://lawways-backend-server-moeen.azurewebsites.net/orders/${id}`,
+            {
+              orderStatus: "Approved",
+            }
+          )
           .then((res) => {
             if (res.data.modifiedCount > 0) {
               swal({

@@ -8,9 +8,11 @@ const ManageService = () => {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/services").then((res) => {
-      setServices(res.data);
-    });
+    axios
+      .get("https://lawways-backend-server-moeen.azurewebsites.net/services")
+      .then((res) => {
+        setServices(res.data);
+      });
   }, []);
 
   const handleDelete = (id) => {
@@ -22,15 +24,19 @@ const ManageService = () => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        axios.delete(`http://localhost:5000/services/${id}`).then((res) => {
-          if (res.data.deletedCount > 0) {
-            swal("Service has been canceled", {
-              icon: "success",
-            });
-            const newServices = services.filter((order) => order._id !== id);
-            setServices(newServices);
-          }
-        });
+        axios
+          .delete(
+            `https://lawways-backend-server-moeen.azurewebsites.net/services/${id}`
+          )
+          .then((res) => {
+            if (res.data.deletedCount > 0) {
+              swal("Service has been canceled", {
+                icon: "success",
+              });
+              const newServices = services.filter((order) => order._id !== id);
+              setServices(newServices);
+            }
+          });
       }
     });
   };

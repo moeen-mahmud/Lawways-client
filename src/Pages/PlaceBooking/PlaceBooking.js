@@ -14,9 +14,13 @@ const PlaceBooking = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/services/${id}`).then((res) => {
-      setService(res.data);
-    });
+    axios
+      .get(
+        `https://lawways-backend-server-moeen.azurewebsites.net/services/${id}`
+      )
+      .then((res) => {
+        setService(res.data);
+      });
   }, [id]);
 
   const handleCancelService = () => {
@@ -46,7 +50,7 @@ const PlaceBooking = () => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:5000/orders", {
+      .post("https://lawways-backend-server-moeen.azurewebsites.net/orders", {
         name: user.displayName,
         email: user.email,
         address: orderData.address,

@@ -10,7 +10,9 @@ const UserOrder = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/orders?email=${user.email}`)
+      .get(
+        `https://lawways-backend-server-moeen.azurewebsites.net/orders?email=${user.email}`
+      )
       .then((res) => {
         setOrders(res.data);
       });
@@ -25,15 +27,19 @@ const UserOrder = () => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        axios.delete(`http://localhost:5000/orders/${id}`).then((res) => {
-          if (res.data.deletedCount > 0) {
-            swal("Service has been canceled", {
-              icon: "success",
-            });
-            const newOrders = orders.filter((order) => order._id !== id);
-            setOrders(newOrders);
-          }
-        });
+        axios
+          .delete(
+            `https://lawways-backend-server-moeen.azurewebsites.net/orders/${id}`
+          )
+          .then((res) => {
+            if (res.data.deletedCount > 0) {
+              swal("Service has been canceled", {
+                icon: "success",
+              });
+              const newOrders = orders.filter((order) => order._id !== id);
+              setOrders(newOrders);
+            }
+          });
       }
     });
   };

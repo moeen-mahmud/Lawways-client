@@ -7,9 +7,11 @@ const ServiceContainer = () => {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/services").then((res) => {
-      setServices(res.data);
-    });
+    axios
+      .get("https://lawways-backend-server-moeen.azurewebsites.net/services")
+      .then((res) => {
+        setServices(res.data);
+      });
   }, []);
 
   return (
