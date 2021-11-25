@@ -5,7 +5,7 @@ import swal from "@sweetalert/with-react";
 import { IoMdTrash } from "react-icons/io";
 import { FcSynchronize } from "react-icons/fc";
 import { FaCheckCircle } from "react-icons/fa";
-
+// TODO: Have to create make admin, add lawyer, payment, giving role, admin route and so on...!
 const ManageUserService = () => {
   const [userServices, setUserServices] = useState([]);
 

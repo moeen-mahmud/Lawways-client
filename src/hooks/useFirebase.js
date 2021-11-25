@@ -10,6 +10,8 @@ import {
 } from "firebase/auth";
 import { useEffect, useState } from "react";
 
+import axios from "axios";
+
 import initializeAuthentication from "../Firebase/firebase.init";
 
 initializeAuthentication();
@@ -31,6 +33,9 @@ const useFirebase = () => {
         // setting new user
         const newUser = { email, displayName: name };
         setUser(newUser);
+
+        // Save user to database
+        saveUser(email, name);
 
         // Update user profile
         updateProfile(auth.currentUser, {
@@ -72,6 +77,10 @@ const useFirebase = () => {
     signInWithPopup(auth, googlePrivider)
       .then((result) => {
         const user = result.user;
+
+        // put user to database
+        putUser(user.email, user.displayName);
+
         const destination = location?.state?.from || "/";
         navigate(destination);
         setAuthError("");
@@ -105,6 +114,20 @@ const useFirebase = () => {
         console.log(err.message);
         setAuthError(err.message);
       });
+  };
+
+  const saveUser = (email, displayName) => {
+    const user = { email, displayName };
+    axios.post("http://localhost:5000/users", user).then((res) => {
+      console.log(res.data);
+    });
+  };
+
+  const putUser = (email, displayName) => {
+    const user = { email, displayName };
+    axios.put("http://localhost:5000/users", user).then((res) => {
+      console.log(res.data);
+    });
   };
 
   return {
