@@ -69,7 +69,7 @@ const DashboardNavigation = () => {
               </li>
               <li>
                 <button
-                  onClick={() => navigate("/dashboard/add-service")}
+                  onClick={() => navigate("/dashboard/add-lawyer")}
                   className="flex items-center gap-2 p-2 text-lg font-semibold text-gray-700 rounded active:bg-gray-500"
                 >
                   <FaUserGraduate className="text-2xl" /> Add Lawyer
