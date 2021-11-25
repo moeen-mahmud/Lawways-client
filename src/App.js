@@ -17,6 +17,7 @@ import MakeAdmin from "./Pages/Dashboard/Admin/MakeAdmin/MakeAdmin";
 import AddService from "./Pages/Dashboard/Admin/AddService/AddService";
 import ManageService from "./Pages/Dashboard/Admin/ManageService/ManageService";
 import AddLawyer from "./Pages/Dashboard/Admin/AddLawyer/AddLawyer";
+import AdminRoute from "./Pages/AdminRoute/AdminRoute";
 
 function App() {
   return (
@@ -50,14 +51,42 @@ function App() {
               <Route path="user-orders" element={<UserOrder />} />
               <Route path="payment" element={<Payment />} />
               <Route path="user-review" element={<UserReview />} />
-              <Route path="manage-services" element={<ManageService />} />
+              <Route
+                path="manage-services"
+                element={
+                  <AdminRoute>
+                    <ManageService />
+                  </AdminRoute>
+                }
+              />
               <Route
                 path="manage-user-services"
                 element={<ManageUserService />}
               />
-              <Route path="make-admin" element={<MakeAdmin />} />
-              <Route path="add-service" element={<AddService />} />
-              <Route path="add-lawyer" element={<AddLawyer />} />
+              <Route
+                path="make-admin"
+                element={
+                  <AdminRoute>
+                    <MakeAdmin />
+                  </AdminRoute>
+                }
+              />
+              <Route
+                path="add-service"
+                element={
+                  <AdminRoute>
+                    <AddService />
+                  </AdminRoute>
+                }
+              />
+              <Route
+                path="add-lawyer"
+                element={
+                  <AdminRoute>
+                    <AddLawyer />
+                  </AdminRoute>
+                }
+              />
             </Route>
           </Routes>
         </Router>

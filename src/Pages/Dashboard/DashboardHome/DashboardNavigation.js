@@ -16,7 +16,7 @@ import useAuth from "../../../hooks/useAuth";
 
 const DashboardNavigation = () => {
   const navigate = useNavigate();
-  const { user } = useAuth();
+  const { user, admin } = useAuth();
 
   return (
     <div>
@@ -33,78 +33,85 @@ const DashboardNavigation = () => {
           </button>
         </div>
         <ul className="mt-4">
-          <li>
-            <button
-              onClick={() => navigate(`/dashboard/${user.displayName}`)}
-              className="flex items-center gap-2 p-2 text-lg font-semibold text-gray-700 rounded active:bg-gray-500"
-            >
-              <BsFillPersonFill className="text-2xl" /> My Profile
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => navigate("/dashboard/user-orders")}
-              className="flex items-center gap-2 p-2 text-lg font-semibold text-gray-700 rounded active:bg-gray-500"
-            >
-              <FaClipboardCheck className="text-2xl" /> My Services
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => navigate("/dashboard/payment")}
-              className="flex items-center gap-2 p-2 text-lg font-semibold text-gray-700 rounded active:bg-gray-500"
-            >
-              <AiFillCreditCard className="text-2xl" /> Payment
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => navigate("/dashboard/user-review")}
-              className="flex items-center gap-2 p-2 text-lg font-semibold text-gray-700 rounded active:bg-gray-500"
-            >
-              <MdRateReview className="text-2xl" /> Review
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => navigate("/dashboard/manage-services")}
-              className="flex items-center gap-2 p-2 text-lg font-semibold text-gray-700 rounded active:bg-gray-500"
-            >
-              <BsGearFill className="text-2xl" /> Manage Services
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => navigate("/dashboard/manage-user-services")}
-              className="flex items-center gap-2 p-2 text-lg font-semibold text-gray-700 rounded active:bg-gray-500"
-            >
-              <MdSupervisedUserCircle className="text-2xl" /> User Services
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => navigate("/dashboard/make-admin")}
-              className="flex items-center gap-2 p-2 text-lg font-semibold text-gray-700 rounded active:bg-gray-500"
-            >
-              <MdAdminPanelSettings className="text-2xl" /> Make Admin
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => navigate("/dashboard/add-service")}
-              className="flex items-center gap-2 p-2 text-lg font-semibold text-gray-700 rounded active:bg-gray-500"
-            >
-              <MdAddCircle className="text-2xl" /> Add Service
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => navigate("/dashboard/add-service")}
-              className="flex items-center gap-2 p-2 text-lg font-semibold text-gray-700 rounded active:bg-gray-500"
-            >
-              <FaUserGraduate className="text-2xl" /> Add Lawyer
-            </button>
-          </li>
+          {admin ? (
+            <>
+              <li>
+                <button
+                  onClick={() => navigate("/dashboard/manage-services")}
+                  className="flex items-center gap-2 p-2 text-lg font-semibold text-gray-700 rounded active:bg-gray-500"
+                >
+                  <BsGearFill className="text-2xl" /> Manage Services
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => navigate("/dashboard/manage-user-services")}
+                  className="flex items-center gap-2 p-2 text-lg font-semibold text-gray-700 rounded active:bg-gray-500"
+                >
+                  <MdSupervisedUserCircle className="text-2xl" /> User Services
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => navigate("/dashboard/make-admin")}
+                  className="flex items-center gap-2 p-2 text-lg font-semibold text-gray-700 rounded active:bg-gray-500"
+                >
+                  <MdAdminPanelSettings className="text-2xl" /> Make Admin
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => navigate("/dashboard/add-service")}
+                  className="flex items-center gap-2 p-2 text-lg font-semibold text-gray-700 rounded active:bg-gray-500"
+                >
+                  <MdAddCircle className="text-2xl" /> Add Service
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => navigate("/dashboard/add-service")}
+                  className="flex items-center gap-2 p-2 text-lg font-semibold text-gray-700 rounded active:bg-gray-500"
+                >
+                  <FaUserGraduate className="text-2xl" /> Add Lawyer
+                </button>
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <button
+                  onClick={() => navigate(`/dashboard/${user.displayName}`)}
+                  className="flex items-center gap-2 p-2 text-lg font-semibold text-gray-700 rounded active:bg-gray-500"
+                >
+                  <BsFillPersonFill className="text-2xl" /> My Profile
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => navigate("/dashboard/user-orders")}
+                  className="flex items-center gap-2 p-2 text-lg font-semibold text-gray-700 rounded active:bg-gray-500"
+                >
+                  <FaClipboardCheck className="text-2xl" /> My Services
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => navigate("/dashboard/payment")}
+                  className="flex items-center gap-2 p-2 text-lg font-semibold text-gray-700 rounded active:bg-gray-500"
+                >
+                  <AiFillCreditCard className="text-2xl" /> Payment
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => navigate("/dashboard/user-review")}
+                  className="flex items-center gap-2 p-2 text-lg font-semibold text-gray-700 rounded active:bg-gray-500"
+                >
+                  <MdRateReview className="text-2xl" /> Review
+                </button>
+              </li>
+            </>
+          )}
         </ul>
       </aside>
     </div>
