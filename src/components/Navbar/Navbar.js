@@ -24,7 +24,6 @@ const Navbar = () => {
   const handleMobileMenu = () => {
     setOpenMenu(!openMenu);
   };
-  // TODO: have to make it fixed by default
   return (
     <div>
       <header className="md:mb-2">
