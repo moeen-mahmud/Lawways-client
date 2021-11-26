@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import Slider from "react-slick";
 import SingleReview from "./SingleReview";
+import BeatLoader from "react-spinners/BeatLoader";
 
 const ReviewContainer = () => {
   const [reviews, setReviews] = useState([]);
@@ -60,13 +61,20 @@ const ReviewContainer = () => {
 
   return (
     <section className="flex flex-col justify-between gap-6 my-32 md:flex-row">
-      <div className="md:w-2/5">
-        <Slider {...settings}>
-          {reviews.map((review) => (
-            <SingleReview key={review._id} review={review} />
-          ))}
-        </Slider>
-      </div>
+      {reviews.length === 0 ? (
+        <div className="mx-auto">
+          <BeatLoader color="#232832" size={20} margin={2} />
+        </div>
+      ) : (
+        <div className="md:w-2/5">
+          <Slider {...settings}>
+            {reviews.map((review) => (
+              <SingleReview key={review._id} review={review} />
+            ))}
+          </Slider>
+        </div>
+      )}
+
       <div className="md:w-1/2">
         <h2 className="mt-10 mb-10 font-serif text-3xl font-bold text-center text-gray-800 md:mt-16 md:text-4xl md:text-left">
           Everyone Deserves Legal Protection

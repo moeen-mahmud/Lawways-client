@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import SingleLawyer from "./SingleLawyer";
-
+import BeatLoader from "react-spinners/BeatLoader";
 const LawyerContainer = () => {
   const [lawyers, setLawyers] = useState([]);
 
@@ -68,15 +68,21 @@ const LawyerContainer = () => {
           them most.
         </p>
       </div>
-      <div className="md:w-1/2">
-        <Slider {...settings}>
-          {lawyers.map((lawyer) => (
-            <div key={lawyer._id}>
-              <SingleLawyer lawyer={lawyer} />
-            </div>
-          ))}
-        </Slider>
-      </div>
+      {lawyers.length === 0 ? (
+        <div className="mx-auto">
+          <BeatLoader color="#232832" size={20} margin={2} />
+        </div>
+      ) : (
+        <div className="md:w-1/2">
+          <Slider {...settings}>
+            {lawyers.map((lawyer) => (
+              <div key={lawyer._id}>
+                <SingleLawyer lawyer={lawyer} />
+              </div>
+            ))}
+          </Slider>
+        </div>
+      )}
     </section>
   );
 };
