@@ -21,7 +21,7 @@
 - It is a service related website.
 - Users can create account with email and password or with Google with private routes.
 - Users can select/order any service which is available, can pay them with [Stripe](https://stripe.com/) and write reviews.
-- The admins can manage users and the sevices, can add a service and make another person an admin.
+- The admins can manage users and the sevices, change order status, can add a service and make another person an admin.
 
 ## Desktop View
 
