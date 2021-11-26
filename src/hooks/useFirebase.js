@@ -107,9 +107,7 @@ const useFirebase = () => {
 
   useEffect(() => {
     axios
-      .get(
-        `https://lawways-backend-server-moeen.azurewebsites.net/users/${user.email}`
-      )
+      .get(`https://secret-plateau-62422.herokuapp.com/users/${user.email}`)
       .then((res) => {
         setAdmin(res.data.admin);
       });
@@ -130,10 +128,7 @@ const useFirebase = () => {
   const saveUser = (email, displayName) => {
     const user = { email, displayName };
     axios
-      .post(
-        "https://lawways-backend-server-moeen.azurewebsites.net/users",
-        user
-      )
+      .post("https://secret-plateau-62422.herokuapp.com/users", user)
       .then((res) => {
         console.log(res.data);
       });
@@ -142,7 +137,7 @@ const useFirebase = () => {
   const putUser = (email, displayName) => {
     const user = { email, displayName };
     axios
-      .put("https://lawways-backend-server-moeen.azurewebsites.net/users", user)
+      .put("https://secret-plateau-62422.herokuapp.com/users", user)
       .then((res) => {
         console.log(res.data);
       });

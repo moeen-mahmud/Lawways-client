@@ -11,7 +11,7 @@ const UserOrder = () => {
   useEffect(() => {
     axios
       .get(
-        `https://lawways-backend-server-moeen.azurewebsites.net/orders?email=${user.email}`
+        `https://secret-plateau-62422.herokuapp.com/orders?email=${user.email}`
       )
       .then((res) => {
         setOrders(res.data);
@@ -28,9 +28,7 @@ const UserOrder = () => {
     }).then((willDelete) => {
       if (willDelete) {
         axios
-          .delete(
-            `https://lawways-backend-server-moeen.azurewebsites.net/orders/${id}`
-          )
+          .delete(`https://secret-plateau-62422.herokuapp.com/orders/${id}`)
           .then((res) => {
             if (res.data.deletedCount > 0) {
               swal("Service has been canceled", {

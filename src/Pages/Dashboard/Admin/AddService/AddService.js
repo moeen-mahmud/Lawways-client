@@ -29,7 +29,7 @@ const AddService = () => {
     e.preventDefault();
 
     axios
-      .post("https://lawways-backend-server-moeen.azurewebsites.net/services", {
+      .post("https://secret-plateau-62422.herokuapp.com/services", {
         serviceName: serviceData.serviceName,
         serviceImage: serviceData.serviceImage,
         serviceBrief: serviceData.serviceBrief,

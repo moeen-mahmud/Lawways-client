@@ -17,7 +17,7 @@ const CheckoutForm = ({ order }) => {
   useEffect(() => {
     axios
       .post(
-        "https://lawways-backend-server-moeen.azurewebsites.net/create-payment-intent",
+        "https://secret-plateau-62422.herokuapp.com/create-payment-intent",
         { price }
       )
       .then((res) => setClientSecret(res.data.clientSecret));
@@ -76,7 +76,7 @@ const CheckoutForm = ({ order }) => {
       };
       axios
         .put(
-          `https://lawways-backend-server-moeen.azurewebsites.net/orders/payment/${_id}`,
+          `https://secret-plateau-62422.herokuapp.com/orders/payment/${_id}`,
           payment
         )
         .then((res) => {

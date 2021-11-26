@@ -15,9 +15,7 @@ const PlaceBooking = () => {
 
   useEffect(() => {
     axios
-      .get(
-        `https://lawways-backend-server-moeen.azurewebsites.net/services/${id}`
-      )
+      .get(`https://secret-plateau-62422.herokuapp.com/services/${id}`)
       .then((res) => {
         setService(res.data);
       });
@@ -50,7 +48,7 @@ const PlaceBooking = () => {
     e.preventDefault();
 
     axios
-      .post("https://lawways-backend-server-moeen.azurewebsites.net/orders", {
+      .post("https://secret-plateau-62422.herokuapp.com/orders", {
         name: user.displayName,
         email: user.email,
         address: orderData.address,

@@ -20,10 +20,7 @@ const AddLawyer = () => {
     formData.append("lawyerDetails", details);
 
     axios
-      .post(
-        "https://lawways-backend-server-moeen.azurewebsites.net/lawyers",
-        formData
-      )
+      .post("https://secret-plateau-62422.herokuapp.com/lawyers", formData)
       .then((res) => {
         if (res.data.insertedId) {
           swal({

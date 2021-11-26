@@ -21,7 +21,7 @@ const UserReview = () => {
     e.preventDefault();
 
     axios
-      .post("https://lawways-backend-server-moeen.azurewebsites.net/reviews", {
+      .post("https://secret-plateau-62422.herokuapp.com/reviews", {
         reviewerName: user.displayName,
         reviewerDesignation: reviewInfo.designation,
         reviewerImage: user.photoURL ? user.photoURL : "",

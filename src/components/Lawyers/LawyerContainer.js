@@ -8,7 +8,7 @@ const LawyerContainer = () => {
 
   useEffect(() => {
     axios
-      .get("https://lawways-backend-server-moeen.azurewebsites.net/lawyers")
+      .get("https://secret-plateau-62422.herokuapp.com/lawyers")
       .then((res) => {
         setLawyers(res.data);
       });

@@ -11,7 +11,7 @@ const ReviewContainer = () => {
 
   useEffect(() => {
     axios
-      .get("https://lawways-backend-server-moeen.azurewebsites.net/reviews")
+      .get("https://secret-plateau-62422.herokuapp.com/reviews")
       .then((res) => {
         setReviews(res.data);
       });

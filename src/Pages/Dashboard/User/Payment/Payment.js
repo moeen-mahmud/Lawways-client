@@ -15,9 +15,7 @@ const Payment = () => {
 
   useEffect(() => {
     axios
-      .get(
-        `https://lawways-backend-server-moeen.azurewebsites.net/orders/${orderId}`
-      )
+      .get(`https://secret-plateau-62422.herokuapp.com/orders/${orderId}`)
       .then((res) => {
         setOrder(res.data);
       });

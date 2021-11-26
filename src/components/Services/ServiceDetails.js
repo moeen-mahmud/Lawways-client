@@ -15,9 +15,7 @@ const ServiceDetails = () => {
 
   useEffect(() => {
     axios
-      .get(
-        `https://lawways-backend-server-moeen.azurewebsites.net/services/${id}`
-      )
+      .get(`https://secret-plateau-62422.herokuapp.com/services/${id}`)
       .then((res) => {
         setService(res.data);
       });

@@ -11,7 +11,7 @@ const ManageUserService = () => {
 
   useEffect(() => {
     axios
-      .get("https://lawways-backend-server-moeen.azurewebsites.net/orders")
+      .get("https://secret-plateau-62422.herokuapp.com/orders")
       .then((res) => {
         setUserServices(res.data);
       });
@@ -27,9 +27,7 @@ const ManageUserService = () => {
     }).then((willDelete) => {
       if (willDelete) {
         axios
-          .delete(
-            `https://lawways-backend-server-moeen.azurewebsites.net/orders/${id}`
-          )
+          .delete(`https://secret-plateau-62422.herokuapp.com/orders/${id}`)
           .then((res) => {
             if (res.data.deletedCount > 0) {
               swal("User order has been deleted successfully", {
@@ -55,12 +53,9 @@ const ManageUserService = () => {
     }).then((willUpdate) => {
       if (willUpdate) {
         axios
-          .put(
-            `https://lawways-backend-server-moeen.azurewebsites.net/orders/${id}`,
-            {
-              orderStatus: "Approved",
-            }
-          )
+          .put(`https://secret-plateau-62422.herokuapp.com/orders/${id}`, {
+            orderStatus: "Approved",
+          })
           .then((res) => {
             if (res.data.modifiedCount > 0) {
               swal({

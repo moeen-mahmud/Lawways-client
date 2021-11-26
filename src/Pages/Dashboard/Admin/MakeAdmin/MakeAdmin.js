@@ -10,10 +10,7 @@ const MakeAdmin = () => {
 
     const user = { email };
     axios
-      .put(
-        "https://lawways-backend-server-moeen.azurewebsites.net/users/admin",
-        user
-      )
+      .put("https://secret-plateau-62422.herokuapp.com/users/admin", user)
       .then((res) => {
         if (res.data.modifiedCount > 0) {
           swal({

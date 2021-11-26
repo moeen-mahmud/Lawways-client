@@ -8,7 +8,7 @@ const ServiceContainer = () => {
 
   useEffect(() => {
     axios
-      .get("https://lawways-backend-server-moeen.azurewebsites.net/services")
+      .get("https://secret-plateau-62422.herokuapp.com/services")
       .then((res) => {
         setServices(res.data);
       });

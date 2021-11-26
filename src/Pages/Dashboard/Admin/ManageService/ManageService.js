@@ -9,7 +9,7 @@ const ManageService = () => {
 
   useEffect(() => {
     axios
-      .get("https://lawways-backend-server-moeen.azurewebsites.net/services")
+      .get("https://secret-plateau-62422.herokuapp.com/services")
       .then((res) => {
         setServices(res.data);
       });
@@ -25,9 +25,7 @@ const ManageService = () => {
     }).then((willDelete) => {
       if (willDelete) {
         axios
-          .delete(
-            `https://lawways-backend-server-moeen.azurewebsites.net/services/${id}`
-          )
+          .delete(`https://secret-plateau-62422.herokuapp.com/services/${id}`)
           .then((res) => {
             if (res.data.deletedCount > 0) {
               swal("Service has been canceled", {
